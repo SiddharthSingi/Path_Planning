@@ -17,5 +17,12 @@ The goal of my project is to use the sensor fusion data to generate a safe and v
 
 ## Implementation
 
-1. ### mk
+1. ### Spline Usage to genrate a path
+In the main.cpp file I used getXY() methods to convert Frenet Coordinates to X, Y coordinates, I used 5 points to generate a spline and then extrapolated points from the spline to give to the simulator. This is done in the lines(  to  ), the five points I used were the second last point in the previous path, the last point in the previous path, and points 45m, 60m, and 75m from the current s poistion of the car. All these points are translated to the last point of the previous path and rotated to the ref_yaw. The notation ref_x, ref_y, ref_s, etc are all used to denote the variables at the end point of the previous path.
+
+2. ### Changing Lanes
+To change lanes I considered two things, first is a lane change possible, and if lane changes are possible in both the right and left lane, then to shift to the lane which has a higher traffic speed. To implement this I created a Class Lane, where a new Lane object is created for every lane. The Lane Class essentially has two methods `bool LaneShift` and `double LaneSpeed`. LaneShift tells whether a lane shift in the particular lane is possible or not, and LaneSpeed gives the maximum speed the car can travel at in that particular lane.
+
+3. ### Speeding Up and Slowing Down
+
 
