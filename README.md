@@ -37,3 +37,4 @@ To avoid rapid jerks in speed of the vehicle I have incorporated a maintain spee
 * The possibility of a lane change should change depending upon the speed the vehicle is travelling at.
 * Currently the car maintains speed for a very brief time period, which I amsure could definitely be improved.
 
+You can watch the video of my path planning implementation on [YouTube](https://youtu.be/Z6ye_7wpOEk)
